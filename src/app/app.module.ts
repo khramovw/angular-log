@@ -11,6 +11,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 /* Modules */
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { ProjectFormComponent } from './components/home/project-form/project-form.component';
+import { ProjectListComponent } from './components/home/project-list/project-list.component';
+import { LogsListComponent } from './components/project/logs-list/logs-list.component';
+import { LogFormComponent } from './components/project/log-form/log-form.component';
 
 
 @NgModule({
@@ -20,7 +24,11 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     ProjectComponent,
     AboutComponent,
     NotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProjectFormComponent,
+    ProjectListComponent,
+    LogsListComponent,
+    LogFormComponent
   ],
   imports: [
     BrowserModule,
