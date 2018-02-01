@@ -3,8 +3,8 @@
     *ngFor=" let project of projects "
   >
     <div class="align-items-center">
-      <a href="" routerLink="/project/{{ project.projectId }}">EasyCode</a>
-      <span class="badge badge-primary badge-pill ml-2">{{ project.logs.length }}</span>
+      <a href="" routerLink="/project/{{project.projectId}}">{{project.name}}</a>
+      <span class="badge badge-primary badge-pill ml-2">{{project.logs.length}}</span>
     </div>
   </li>
 </ul>

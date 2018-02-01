@@ -16,10 +16,10 @@ export class ProjectListComponent implements OnInit {
 
   projects: Project[];
 
-  constructor( public ProjectsServices: ProjectsService ) { }
+  constructor( public projectsServices: ProjectsService ) { }
 
   ngOnInit() {
-    this.projects = this.ProjectsServices.getAllProject();
+    this.projects = this.projectsServices.getAllProject();
     console.log(this.projects);
   }
 

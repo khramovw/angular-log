@@ -14,8 +14,9 @@ import { Log } from "../../../models/Log";
 export class LogsListComponent implements OnInit {
 
   @Input() logs: Log[];
+  @Input() currentRouteId: string;
 
-  constructor( public ProjectsService: ProjectsService ) { }
+  constructor( public projectsService: ProjectsService ) { }
 
   ngOnInit() {
   }

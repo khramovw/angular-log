@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 
 /* Services */
 import { ProjectsService } from "./services/projects.service";
+import { UuidService } from "./services/uuid.service";
 
 @NgModule({
   declarations: [
@@ -35,9 +37,10 @@ import { ProjectsService } from "./services/projects.service";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [ProjectsService],
+  providers: [ProjectsService, UuidService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,7 +14,7 @@ export class ProjectsService {
   constructor() {
     this.projects = [
       {
-        projectId: '1',
+        projectId: '121',
         name: "EasyCode",
         logs: [
           {
@@ -33,6 +33,17 @@ export class ProjectsService {
             date: '20.01.2018 15:44:18'
           }
         ]
+      },
+      {
+        projectId: '125',
+        name: "Amazone",
+        logs: [
+          {
+            id: '1',
+            text: 'Added html',
+            date: '20.01.2018 15:21:12'
+          }
+        ]
       }
     ]
   }
@@ -47,5 +58,9 @@ export class ProjectsService {
       }
     });
     return this.selectedProject;
+  }
+  addProject(project) {
+    this.projects.unshift(project);
+    console.log(project)
   }
 }

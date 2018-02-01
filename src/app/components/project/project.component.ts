@@ -5,7 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import { ProjectsService } from "../../services/projects.service";
 
 // Models
-import {Project} from "../../models/Project";
+import { Project } from "../../models/Project";
 
 @Component({
   selector: 'app-project',
@@ -17,14 +17,14 @@ export class ProjectComponent implements OnInit {
   currentRouteId: string;
   currentProject: Project;
 
-  constructor( public ProjectsServices: ProjectsService, public route: ActivatedRoute ) { }
+  constructor( public projectsServices: ProjectsService, public route: ActivatedRoute ) { }
 
   ngOnInit() {
     this.currentRouteId = this.route.snapshot.params.id;
 
-    this.currentProject = this.ProjectsServices.getProject(this.currentRouteId);
+    this.currentProject = this.projectsServices.getProject(this.currentRouteId);
 
-    console.log(this.currentRouteId);
+    console.log(this.currentRouteId,  this.currentProject);
   }
 
 }
