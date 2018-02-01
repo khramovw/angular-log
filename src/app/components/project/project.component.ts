@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
+
+// Service
+import { ProjectsService } from "../../services/projects.service";
+
+// Models
+import {Project} from "../../models/Project";
 
 @Component({
   selector: 'app-project',
@@ -7,9 +14,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
-  constructor() { }
+  currentRouteId: string;
+  currentProject: Project;
+
+  constructor( public ProjectsServices: ProjectsService, public route: ActivatedRoute ) { }
 
   ngOnInit() {
+    this.currentRouteId = this.route.snapshot.params.id;
+
+    this.currentProject = this.ProjectsServices.getProject(this.currentRouteId);
+
+    console.log(this.currentRouteId);
   }
 
 }

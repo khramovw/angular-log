@@ -8,14 +8,17 @@ import { ProjectComponent } from './components/project/project.component';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
-/* Modules */
-import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ProjectFormComponent } from './components/home/project-form/project-form.component';
 import { ProjectListComponent } from './components/home/project-list/project-list.component';
 import { LogsListComponent } from './components/project/logs-list/logs-list.component';
 import { LogFormComponent } from './components/project/log-form/log-form.component';
 
+/* Modules */
+/* App routing */
+import { AppRoutingModule } from './app-routing/app-routing.module';
+
+/* Services */
+import { ProjectsService } from "./services/projects.service";
 
 @NgModule({
   declarations: [
@@ -34,7 +37,7 @@ import { LogFormComponent } from './components/project/log-form/log-form.compone
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ProjectsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

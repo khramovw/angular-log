@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+// Services
+import { ProjectsService } from "../../../services/projects.service";
+
+// Models
+import { Log } from "../../../models/Log";
+import { Project } from "../../../models/Project";
+
 @Component({
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
@@ -7,9 +14,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectListComponent implements OnInit {
 
-  constructor() { }
+  projects: Project[];
+
+  constructor( public ProjectsServices: ProjectsService ) { }
 
   ngOnInit() {
+    this.projects = this.ProjectsServices.getAllProject();
+    console.log(this.projects);
   }
 
 }

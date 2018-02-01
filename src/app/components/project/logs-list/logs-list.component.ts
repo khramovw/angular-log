@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+// Services
+import { ProjectsService } from "../../../services/projects.service";
+
+// Models
+import { Log } from "../../../models/Log";
 
 @Component({
   selector: 'app-logs-list',
@@ -7,7 +13,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogsListComponent implements OnInit {
 
-  constructor() { }
+  @Input() logs: Log[];
+
+  constructor( public ProjectsService: ProjectsService ) { }
 
   ngOnInit() {
   }
