@@ -15,10 +15,16 @@ export class LogsListComponent implements OnInit {
 
   @Input() logs: Log[];
   @Input() currentRouteId: string;
+  selectedLog: Log;
 
   constructor( public projectsService: ProjectsService ) { }
 
   ngOnInit() {
+  }
+
+  onSelect(log: Log) {
+    this.projectsService.setFormLog(log);
+    this.selectedLog = log;
   }
 
 }

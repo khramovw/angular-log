@@ -29,5 +29,4 @@ export class ProjectFormComponent implements OnInit {
       logs: []
     })
   }
-
 }

@@ -22,9 +22,12 @@ export class ProjectComponent implements OnInit {
   ngOnInit() {
     this.currentRouteId = this.route.snapshot.params.id;
 
-    this.currentProject = this.projectsServices.getProject(this.currentRouteId);
+    this.projectsServices.getProject(this.currentRouteId).subscribe(project => {
+      this.currentProject = project;
+    }, error => {
+      console.error(error);
+    });
 
     console.log(this.currentRouteId,  this.currentProject);
   }
-
 }
