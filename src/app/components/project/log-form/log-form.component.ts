@@ -27,16 +27,14 @@ export class LogFormComponent implements OnInit {
 
     //подпсываюсь на выбор log
     this.projectsService.selectedLog.subscribe(log => {
-    console.log(log);
-    if( log.id !== null ){
+      console.log(log);
+      if( log.id !== null ){
       this.isNew = false;
       this.id = log.id;
       this.text = log.text;
       this.date = log.date;
-    }
-
-    })
-
+      }
+    });
   }
 
   onSubmit() {
@@ -58,6 +56,7 @@ export class LogFormComponent implements OnInit {
       };
       this.projectsService.updateLog(updlog, this.currentRouteId);
     }
+    this.clearState();
   }
   clearState(){
     this.isNew = true;

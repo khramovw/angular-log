@@ -18,6 +18,9 @@ export class ProjectsService {
   private logSource = new BehaviorSubject<Log>({id: null, text: null, date: null});
   selectedLog = this.logSource.asObservable();
 
+  private stateSource = new BehaviorSubject<boolean>(true);
+  stateClear = this.stateSource.asObservable();
+
   constructor() {
 
     this.projects = JSON.parse(localStorage.getItem('projects')) || [];
@@ -75,5 +78,9 @@ export class ProjectsService {
   }
   setFormLog(log: Log){
     this.logSource.next(log);
+  }
+  clearState() {
+    this.stateSource.next(true);
+    this.logSource.next({id: null, text: null, date: null});
   }
 }

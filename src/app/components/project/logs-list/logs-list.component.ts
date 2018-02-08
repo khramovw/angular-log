@@ -20,6 +20,27 @@ export class LogsListComponent implements OnInit {
   constructor( public projectsService: ProjectsService ) { }
 
   ngOnInit() {
+    //подпсываюсь на выбор log
+    // this.projectsService.selectedLog.subscribe(log => {
+    //   console.log(log);
+    //   if( log.id === null ){
+    //     this.selectedLog = {
+    //       id: '',
+    //       text: '',
+    //       date: ''
+    //     };
+    //   }
+    // });
+
+    this.projectsService.stateClear.subscribe(clearState => {
+      if( clearState ) {
+        this.selectedLog = {
+          id: '',
+          text: '',
+          date: ''
+        };
+      }
+    })
   }
 
   onSelect(log: Log) {

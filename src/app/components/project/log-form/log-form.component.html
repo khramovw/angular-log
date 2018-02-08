@@ -10,7 +10,8 @@
                name="text"
         >
       </div>
-      <button type="submit" class="btn btn-primary">{{ isNew ? "Add log": "Update log" }}</button>
+      <button type="submit" class="btn btn-primary" [disabled]="!text">{{ isNew ? "Add log": "Update log" }}</button>
+      <button type="button" class="btn btn-warning" [hidden]="!text" (click)="clearState()">Clear</button>
     </form>
   </div>
 </div>
